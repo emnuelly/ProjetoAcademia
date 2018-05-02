@@ -14,11 +14,16 @@ import java.awt.SystemColor;
 import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JScrollPane;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class frmInicio extends JFrame {
 
 	private JPanel contentPane;
-	private JTable table;
+	private JTable tableDados;
 
 	/**
 	 * Launch the application.
@@ -46,46 +51,77 @@ public class frmInicio extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panelTitulo = new JPanel();
-		panelTitulo.setBackground(SystemColor.inactiveCaption);
+		panelTitulo.setBackground(new Color(255, 255, 204));
 		panelTitulo.setBounds(0, 0, 434, 50);
 		contentPane.add(panelTitulo);
 		panelTitulo.setLayout(null);
 		
-		JLabel lblTitulo = new JLabel("ACADEMIA BOA FORMA");
-		lblTitulo.setIcon(new ImageIcon(frmInicio.class.getResource("/br/senai/sp/jandira/imagens/gym-control-of-exercises-with-a-list-on-a-clipboard-and-heart-beats (1).png")));
+		JLabel lblTitulo = new JLabel("ACADEMIA");
+		lblTitulo.setIcon(new ImageIcon(frmInicio.class.getResource("/br/senai/sp/jandira/imagens/fitness.png")));
 		lblTitulo.setForeground(SystemColor.desktop);
-		lblTitulo.setFont(new Font("Arial", Font.PLAIN, 19));
-		lblTitulo.setBounds(159, 11, 265, 28);
+		lblTitulo.setFont(new Font("Aharoni", Font.PLAIN, 24));
+		lblTitulo.setBounds(78, 4, 174, 39);
 		panelTitulo.add(lblTitulo);
 		
-		JPanel panel = new JPanel();
-		panel.setBounds(0, 50, 434, 341);
-		contentPane.add(panel);
+		JLabel lblBoaForma = new JLabel("Boa Forma");
+		lblBoaForma.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBoaForma.setForeground(new Color(250, 128, 114));
+		lblBoaForma.setFont(new Font("Segoe Script", Font.PLAIN, 23));
+		lblBoaForma.setBounds(173, 22, 135, 28);
+		panelTitulo.add(lblBoaForma);
 		
-		table = new JTable();
-		table.setBounds(10, 30, 415, 213);
-		table.setModel(new DefaultTableModel(
+		JPanel panelDados = new JPanel();
+		panelDados.setForeground(SystemColor.menu);
+		panelDados.setBackground(new Color(255, 255, 255));
+		panelDados.setBounds(0, 50, 434, 341);
+		contentPane.add(panelDados);
+		panelDados.setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 11, 414, 319);
+		panelDados.add(scrollPane);
+		
+		tableDados = new JTable();
+		tableDados.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
-				{null, null},
 			},
 			new String[] {
-				"ID", "CLIENTE"
+				"ID", "CLIENTES"
 			}
 		));
-		table.getColumnModel().getColumn(0).setPreferredWidth(40);
-		table.getColumnModel().getColumn(1).setPreferredWidth(295);
-		panel.setLayout(null);
-		panel.add(table);
+		tableDados.getColumnModel().getColumn(0).setPreferredWidth(53);
+		tableDados.getColumnModel().getColumn(1).setPreferredWidth(340);
+		scrollPane.setViewportView(tableDados);
+		
+		JPanel panelBotoes = new JPanel();
+		panelBotoes.setBackground(new Color(255, 255, 204));
+		panelBotoes.setBounds(0, 390, 434, 63);
+		contentPane.add(panelBotoes);
+		panelBotoes.setLayout(null);
+		
+		JButton btnAdiciona = new JButton("");
+		btnAdiciona.setToolTipText("Editar um cliente!");
+		btnAdiciona.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnAdiciona.setBounds(27, 8, 59, 50);
+		btnAdiciona.setIcon(new ImageIcon(frmInicio.class.getResource("/br/senai/sp/jandira/imagens/pencil.png")));
+		panelBotoes.add(btnAdiciona);
+		
+		JButton btnSair = new JButton("");
+		btnSair.setIcon(new ImageIcon(frmInicio.class.getResource("/br/senai/sp/jandira/imagens/exit.png")));
+		btnSair.setBounds(348, 8, 59, 50);
+		panelBotoes.add(btnSair);
+		
+		JButton btnEditar = new JButton("");
+		btnEditar.setToolTipText("Editar um cliente!");
+		btnEditar.setBounds(96, 8, 59, 50);
+		panelBotoes.add(btnEditar);
+		
+		JButton btnExcluir = new JButton("");
+		btnExcluir.setToolTipText("Editar um cliente!");
+		btnExcluir.setBounds(165, 8, 59, 50);
+		panelBotoes.add(btnExcluir);
 	}
 }
