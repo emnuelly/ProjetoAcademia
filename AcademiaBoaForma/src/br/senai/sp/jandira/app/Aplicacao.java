@@ -1,11 +1,14 @@
 package br.senai.sp.jandira.app;
 
-import br.senai.sp.jandira.frames.FrmCadCliente;
+
+import br.senai.sp.jandira.view.frmDados;
+import br.senai.sp.jandira.view.frmInicio;
 
 public class Aplicacao {
 
 	public static void main(String[] args) {
-		FrmCadCliente cadCliente = new FrmCadCliente();
+		frmInicio inicio = new frmInicio();
+		inicio.setVisible(true);
 
 	}
 
