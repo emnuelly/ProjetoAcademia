@@ -56,10 +56,7 @@ public class frmDados extends JFrame {
 	private JLabel lblResultadoTmb;
 	private JLabel lblResultadoImc;
 	private JLabel lblOperador;
-	
-	
-	
-	
+
 
 	public void setTxtNome(String nome) {
 		this.txtNome.setText(nome);
@@ -405,6 +402,8 @@ public class frmDados extends JFrame {
 					Cliente cliente = new Cliente();
 					cliente.setCpf(txtCpf.getText());
 					cliente.setNome(txtNome.getText());
+					cliente.setCelular(txtCelular.getText());
+					cliente.setEmail(txtEmail.getText());
 					cliente.setSexo(btnGrupoSexo.getSelection().getActionCommand());
 					cliente.setNiveisAtividades(comboBox.getSelectedItem().toString());
 					cliente.setDtNasc(dataBanco);
@@ -422,7 +421,7 @@ public class frmDados extends JFrame {
 						limpar();
 					}else if(lblOperador.getText().equals("EXCLUIR")){
 						int resposta = JOptionPane.showConfirmDialog(null,
-								"Tem certeza que deseja excluir? " + cliente.getNome() + "?", "Atenção",
+								"Tem certeza que deseja excluir esse contato?", "Atenção",
 								JOptionPane.YES_NO_OPTION);
 
 						if (resposta == 0) {
