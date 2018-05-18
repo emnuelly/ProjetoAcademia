@@ -32,7 +32,7 @@ public class frmInicio extends JFrame {
 	
 	public frmInicio() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 514);
+		setBounds(100, 100, 450, 591);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -61,12 +61,12 @@ public class frmInicio extends JFrame {
 		JPanel panelDados = new JPanel();
 		panelDados.setForeground(SystemColor.menu);
 		panelDados.setBackground(new Color(255, 255, 255));
-		panelDados.setBounds(0, 50, 434, 361);
+		panelDados.setBounds(0, 50, 434, 428);
 		contentPane.add(panelDados);
 		panelDados.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 11, 414, 339);
+		scrollPane.setBounds(10, 11, 414, 406);
 		panelDados.add(scrollPane);
 		
 		tableDados = new JTable();
@@ -84,22 +84,22 @@ public class frmInicio extends JFrame {
 		
 		JPanel panelBotoes = new JPanel();
 		panelBotoes.setBackground(new Color(255, 255, 204));
-		panelBotoes.setBounds(0, 412, 434, 63);
+		panelBotoes.setBounds(0, 489, 434, 63);
 		contentPane.add(panelBotoes);
 		panelBotoes.setLayout(null);
 		
-		JButton btnAdiciona = new JButton("");
-		btnAdiciona.setToolTipText("Adicionar um novo cliente!");
-		btnAdiciona.addActionListener(new ActionListener() {
+		JButton btnAdicionar = new JButton("");
+		btnAdicionar.setToolTipText("Adicionar um novo cliente!");
+		btnAdicionar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				frmDados dadosCliente = new frmDados("ADCIONAR");
 				dadosCliente.setTitle("Adicionar contato");
 				dadosCliente.setVisible(true);
 			}
 		});
-		btnAdiciona.setBounds(27, 8, 59, 50);
-		btnAdiciona.setIcon(new ImageIcon(frmInicio.class.getResource("/br/senai/sp/jandira/imagens/user.png")));
-		panelBotoes.add(btnAdiciona);
+		btnAdicionar.setBounds(27, 8, 59, 50);
+		btnAdicionar.setIcon(new ImageIcon(frmInicio.class.getResource("/br/senai/sp/jandira/imagens/user.png")));
+		panelBotoes.add(btnAdicionar);
 		
 		JButton btnSair = new JButton("");
 		btnSair.setToolTipText("Sair da aplica\u00E7\u00E3o!");
